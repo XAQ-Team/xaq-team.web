@@ -1,2 +1,1 @@
-# xaq-team
-introducion
+# XAQ Team
