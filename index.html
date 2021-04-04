@@ -4,5 +4,8 @@
   </head>
   <body>
     <p> Hello World! </p>
+    $.getJSON('https://json.geoiplookup.io/api?callback=?', function(data) {
+      alert(data.ip);
+    });
   </body>
 </html>
