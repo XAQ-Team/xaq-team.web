@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Why i created this&</title>
+</head>
+
+<body>
+    <p align="center">Серпинского?</p>
+    <div id="main">
+        <div id="draw">
+            <canvas id="CANVAS" width="600" height="600"> not started </canvas>
+        </div>
+        <div id="input">
+            <label>
+                drawing ckopoctb
+                <input id="range" type="range" min="5" max="2000">
+            </label>
+            <p id="value">1000</p>
+        </div> <!-- чел, не смотри этот код, я его написал за первые 3 часа изучения js-->
+    </div> <!-- хуяк хуяк, в продакшен -->
+
+    <script> // да здравствуют костыли
+        var isdotting = true;  // да здравствуют костыли
+        var poly = [[300, 50], [50, 500], [550, 500]]; // да здравствуют костыли
+        var posDot = poly[0]; // да здравствуют костыли
+        var tmout = 1000; // да здравствуют костыли
+        // function interval(count, timeout, callback) {
+        //     if (count === 0) return;
+        //     callback()
+        //     setTimeout(() => interval(count - 1, timeout, callback), timeout)
+        // }
+        function randint(max) {
+            return Math.floor(Math.random() * max);
+        }
+        function main() {
+            setInterval(drawdot, tmout);
+        }
+        function drawdot(){
+            if(isdotting) {
+                let choice = poly[randint(3)];
+                posDot = [
+                    (posDot[0] + choice[0]) / 2,
+                    (posDot[1] + choice[1]) / 2
+                ];
+                console.log("drawind to ", posDot[0], posDot[1]);
+                context.fillRect(posDot[0], posDot[1], 2, 2);
+            }
+        }
+
+    var rng=document.getElementById('range'); //rng - это Input
+    var canvas = document.getElementById("CANVAS");
+    var context = canvas.getContext("2d");
+
+    context.beginPath();
+    context.moveTo(poly[0][0], poly[0][1]);
+    context.lineTo(poly[1][0], poly[1][1]);
+    context.lineTo(poly[2][0], poly[2][1]);
+    context.closePath();
+
+    context.lineWidth = 3;
+    context.strokeStyle = '#666';
+    context.stroke();
+
+    rng.oninput = function () { // да здравствуют костыли
+        // тут короче недочет - любое изменение ползунка создает новый поток для рисования =)
+        var p=document.getElementById('value');
+        p.innerHTML=rng.value;
+        tmout = rng.value;
+        main();
+    };
+
+    window.onload = main;  // да здравствуют костыли
+    </script>
+</body>
+</html>
