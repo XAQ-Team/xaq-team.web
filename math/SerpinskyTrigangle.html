@@ -1,76 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Why i created this&</title>
+    <title>Why i created this?</title>
 </head>
 
 <body>
-    <p align="center">Серпинского?</p>
+    <p align="center">Серпинского? Прям его? Ебать</p>
     <div id="main">
         <div id="draw">
             <canvas id="CANVAS" width="600" height="600"> not started </canvas>
         </div>
         <div id="input">
             <label>
-                drawing ckopoctb
+                Draw speed
                 <input id="range" type="range" min="5" max="2000">
             </label>
             <p id="value">1000</p>
-        </div> <!-- чел, не смотри этот код, я его написал за первые 3 часа изучения js-->
-    </div> <!-- хуяк хуяк, в продакшен -->
+        </div>
+    </div>
 
-    <script> // да здравствуют костыли
-        var isdotting = true;  // да здравствуют костыли
-        var poly = [[300, 50], [50, 500], [550, 500]]; // да здравствуют костыли
-        var posDot = poly[0]; // да здравствуют костыли
-        var tmout = 1000; // да здравствуют костыли
-        // function interval(count, timeout, callback) {
-        //     if (count === 0) return;
-        //     callback()
-        //     setTimeout(() => interval(count - 1, timeout, callback), timeout)
-        // }
-        function randint(max) {
-            return Math.floor(Math.random() * max);
-        }
+    <!-- ПЕРЕДЕЛЫВАЙ, КОРОЧЕ -->
+
+    <script>
+        // var is_dotting = true; // ВОТ ЗАЧЕМ ЭТО, ЕСЛИ ОНО ВЕГДА TRUE?
+        var poly = [[300, 50], [50, 500], [550, 500]];
+        var initial_dot_pos = poly[0];
+        var timeout = 1000;
+
+        var range_input = document.getElementById('range');
+        var canvas = document.getElementById("CANVAS");
+        var context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.moveTo(poly[0][0], poly[0][1]);
+        context.lineTo(poly[1][0], poly[1][1]);
+        context.lineTo(poly[2][0], poly[2][1]);
+        context.closePath();
+
+        context.lineWidth = 3;
+        context.strokeStyle = '#666';
+        context.stroke();
+
         function main() {
-            setInterval(drawdot, tmout);
-        }
-        function drawdot(){
-            if(isdotting) {
-                let choice = poly[randint(3)];
-                posDot = [
-                    (posDot[0] + choice[0]) / 2,
-                    (posDot[1] + choice[1]) / 2
-                ];
-                console.log("drawind to ", posDot[0], posDot[1]);
-                context.fillRect(posDot[0], posDot[1], 2, 2);
-            }
+            setInterval(draw_dot, timeout);
         }
 
-    var rng=document.getElementById('range'); //rng - это Input
-    var canvas = document.getElementById("CANVAS");
-    var context = canvas.getContext("2d");
+        function draw_dot() {
+            let rand_values = poly[Math.floor(Math.random() * 3)];
 
-    context.beginPath();
-    context.moveTo(poly[0][0], poly[0][1]);
-    context.lineTo(poly[1][0], poly[1][1]);
-    context.lineTo(poly[2][0], poly[2][1]);
-    context.closePath();
+            let pos_X = (initial_dot_pos[0] + rand_values[0]) / 2;
+            let pos_Y = (initial_dot_pos[1] + rand_values[1]) / 2;
+            let new_dot_pos = [pos_X, pos_Y];
 
-    context.lineWidth = 3;
-    context.strokeStyle = '#666';
-    context.stroke();
+            initial_dot_pos = new_dot_pos;
 
-    rng.oninput = function () { // да здравствуют костыли
-        // тут короче недочет - любое изменение ползунка создает новый поток для рисования =)
-        var p=document.getElementById('value');
-        p.innerHTML=rng.value;
-        tmout = rng.value;
-        main();
-    };
+            console.log("Draw new dot on: ", new_dot_pos[0], new_dot_pos[1]);
+            context.fillRect(new_dot_pos[0], new_dot_pos[1], 2, 2);
+        }
 
-    window.onload = main;  // да здравствуют костыли
+        // !!! ТУТ НЕДОЧЕТ !!! 
+        // любое изменение ползунка создает новый поток для рисования
+        range_input.oninput = function () {
+            var p = document.getElementById('value');
+            p.innerHTML = range_input.value;
+            timeout = range_input.value;
+            main();
+        };
+
+        window.onload = main;
     </script>
 </body>
+
 </html>
