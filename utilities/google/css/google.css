@@ -42,8 +42,6 @@ main.home {
 main.home .logo {
   width: 272px;
   height: 92px;
-  background-repeat: no-repeat;
-  background-repeat: no-repeat;
   background-size: 272px 92px;
   margin: 0 auto;
   margin-bottom: 30px;
@@ -55,6 +53,9 @@ main.home .logo:after {
   top: 72px;
   color: #666;
   font-size: 18px;
+}
+main.home .message-box {
+
 }
 main.home .search {
   height: 44px;
@@ -172,11 +173,7 @@ main.home .button-group {
     transform: translate(-50%, -50%);
 	height: 90px;
 }
-#about {
-    margin-top: 0.5em;
-    color: #666;
-    text-align: center;
-}
+
 .join_button {
   font-family: Google Sans,Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
   font-weight: 500;
@@ -196,11 +193,6 @@ main.home .button-group {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-#about a {color:#8e8e8e;}
-#link_buttons, #link_message, #link { position: absolute; display: none; }
-#link_buttons {margin-top:10px;}
-#instructions {text-align: center; padding: 20px; color:#34a853;font-size: 18px;}
-#fake_mouse { position: absolute; top: -100px; left: -200px; }
-#link {height: 70px; margin-top: 20px;}
-.copyable {width: 250px; height: 32px; text-indent: 5px; font-size: 18px;}
-#link_message { z-index: 99; width: 250px; height: 32px; background-color: #4285F4; color: #fff; line-height: 32px; text-align: center; font-size: 1em; }
+#mouse-pointer { height: 20px; display: none; z-index: 999;}
+#error { color: #e64235; }
+#success { color: #34a552; }
