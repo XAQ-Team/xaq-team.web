@@ -17,14 +17,31 @@
 	<div class="fluid-container">
 		<div class="toolbar">
 			<ul>
-			  <li><a href="https://mail.google.com/mail/?tab=wm" class="no-pretify-color">Почта</a></li>
-			  <li><a href="https://www.google.com/imghp?hl=ru&tab=wi" class="no-pretify-color">Картинки</a></li>
-			  <li><a href="https://xaq-team.github.io" class="no-pretify-color"><i class="material-icons">apps</i></a></li>
-			  <li><a href="https://xaq-team.github.io" class="join_button">Войти</a></li>
+			  <li><a href="https://mail.google.com/mail/?tab=wm" class="underline-link no-bg-button">Почта</a></li>
+			  <li><a href="https://www.google.com/imghp?hl=ru&tab=wi" class="underline-link no-bg-button">Картинки</a></li>
+			  <li><a href="/" class="no-bg-button"><i class="material-icons">apps</i></a></li>
+			  <li><a href="/" class="join_button">Войти</a></li>
 			</ul>
 		</div>
 
-		<img id="mouse-pointer" src="img/pointer.png" />
+		<img id="mouse-pointer" src="img/pointer.png"  alt=""/>
+		<div id="instruction" class="info-block">
+			<ul>
+				<li> <span id="instruction-text-1" class="instruction-text transpend-text"> Шаг 1. Напиши запрос в поле ввода </span> </li>
+				<li> <span id="instruction-text-2" class="instruction-text transpend-text"> Шаг 2. Нажми на кнопку поиска </span> </li>
+				<li> <span id="instruction-comment" class="instruction-text transpend-text"> Видишь, как просто? </span> </li>
+				<!-- <li id="instruction-text-4"> Надеюсь, ты выучишь эти шаги </li>  -->
+				<li> <span id="instruction-tip" class="instruction-text transpend-text"> чтобы сделать такую же ссылку - кнопка "сброс" справа внизу </span> </li>
+			</ul>
+		</div>
+		<div id="about" class="info-block">
+			<span id="about-text">
+				<p> Этот сайт создан для тех, кто хочет сказать человеку, что этот вопрос можно загуглить, вместо того, чтобы тревожить других. </p>
+				<p> Будьте осторожны с такими шутками - так можно потерять друзей :)</p>
+				<p> Если хотите больше узнать о нас, посетите <a href="/" class="underline-link"> Главную страницу </a> </p>
+
+			</span>
+		</div>
 		<main class="home">
 			<div class="logo">
 				<img src="img/logo.png">
@@ -48,13 +65,14 @@
 			</form>
 		</main>
 	  	<div class="footer">
-			<ul>
-			  <li><a href="https://www.google.com/services/">Для бизнеса</a></li>
-			  <li><a href="https://www.google.com/intl/ru_ua/about/">Всё о Google</a></li>
-			  <li><a href="https://www.google.com/ncr">Перейти на Google.com</a></li>
+			<ul class="left-footer">
+			  <li><a class="underline-link" href="https://www.google.com/services/">Для бизнеса</a></li>
+			  <li><a class="underline-link" href="https://www.google.com/intl/ru_ua/about/">Всё о Google</a></li>
+			  <li><a class="underline-link" href="https://www.google.com/ncr">Перейти на Google.com</a></li>
 			</ul>
-			<ul>
-			  <li><a id="showabout" href="#">Об этой странице</a></li>
+			<ul class="right-footer">
+				<li><a class="underline-link" href="#" onclick="getAbout()">Об этой странице</a></li>
+				<li><a class="underline-link" href=".">Сброс</a></li>
 			</ul>
 	  	</div>
 	</div>

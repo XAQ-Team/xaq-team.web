@@ -1,0 +1,102 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html {
+    width: 100%;
+}
+body {
+    font: 81.25% Arial,Helvetica,'Helvetica Neue',sans-serif;
+    font-family: 'YS Text','Helvetica Neue',Arial,sans-serif;
+    font-feature-settings: 'liga','kern';
+    width: 100%;
+}
+main {
+
+}
+.search-block {
+    position: relative;
+    margin: 0 auto;
+    height: 100px;
+    width: 941px;
+    padding-right: 17px;
+    display: flex;
+}
+.logo {
+    height: 100%;
+}
+.search-area {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.orange-box {
+    padding: 30px 0;
+
+}
+.search-form {
+    position: relative;
+    display: flex;
+    width: 100%;
+    background: #fc0;
+    border-radius: .625rem; /* При стандартных настройках браузера высота строки 1.25em => / 2 = 0.625em. */
+    border-collapse: collapse;
+    max-width: none;
+}
+.input-block {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 2px;
+    border-collapse: collapse;
+}
+.search-input {
+    height: 2.1em;
+    width: 100%;
+    display: block;
+    padding: 0 3px 0 10px;
+    border-radius:  .5rem .3rem .3rem .5rem;
+    border: 0 solid transparent;
+    outline: none;
+    font-size: 18px;
+    font-family: inherit;
+
+}
+.search-button {
+    height: 100%;
+    padding: 0 15px;
+    font-family: inherit;
+    background: #fc0;
+    -webkit-transition: background .1s linear;
+    transition: background .1s linear;
+    font-size: 123.1%;
+    border-radius: 0 .625rem .625rem 0;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+}
+.button-text {
+    vertical-align: 2px;
+    padding: 0 1.125rem;
+}
+main.home {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -1rem;
+}
+@media screen and (max-width: 950px){
+    .search-block {
+        width: 600px;
+    }
+}
+@media screen and (max-width: 600px){
+    .search-block {
+        width: 400px;
+    }
+}
+:focus::-webkit-input-placeholder { color: transparent }
+:focus::-moz-placeholder { color: transparent }
+:focus:-moz-placeholder { color: transparent }
+:focus:-ms-input-placeholder { color: transparent }

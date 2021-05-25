@@ -2,29 +2,20 @@
 
 // const wait = (i, ms) => new Promise(resolve => setTimeout(() => resolve(i), ms));
 
-const script = [
-    step_1 = "Введите запрос в поле ввода.",
-    step_2 = "Нажмите кнопку поиска.",
-    step_3 = 'Надеюсь ты запомнил эти шаги.'
-];
-
 var urlParams = new URLSearchParams(window.location.search);
 
-async function onPageLoaded() {
-    if (urlParams.has('q')) {
-        $('#mouse-pointer').show();
-        $('#mouse-pointer').css({position: "absolute"});
-
+function onPageLoaded() {
+    if (urlParams.has('q')) {  // если в get запросе передан аргумент q - начать анимацию
         $("#search").click(redirectSearch);
         $("#lucky").click(redirectLuck);
 
-        startAnim();  // меня в играх так не бомбило, как я пытался реализовать код по парадигме функциональщины.
-                      // это блять настолько тупорылый язык, что у меня нет слов.
-                      // попробовал я значит сделать функцию перемещения фейк курсора. как итог - курсор идет сразу к итоговой позиции
-                      // вместо поочерёдного выполнения функций (Псевдо код говна, о котором говорю:
-                      //   ПереместитьКурсор(поле ввода); НабиратьТекстСПериодом("text"); ПереместитьКурсор("кнопка подтвержд.)
+        $("#instruction").show();
+        $("#mouse-pointer").show();
+        $("#mouse-pointer").css({position: "absolute"});
 
-    } else {
+        setTimeout(startAnim, 250);  // меня в играх так не бомбило, как я пытался реализовать код по парадигме функциональщины.
+
+    } else {  // иначе показать меню создания ссылки
         $("#search").html("Создать ссылку");
         $("#search").click(createLink);
         $("#lucky").html("Что это такое?");
@@ -33,9 +24,10 @@ async function onPageLoaded() {
 }
 
 function createLink() {
-    let link = window.location.toString();//.charAt(17);
+    let link = window.location.toString();
     link += (link.indexOf('?') !== -1 ? "&" : "?");
     link += "q=";
+
     link += EncodeURLlink($('#inputPlace').val());
     $('#inputPlace').val(link);
 
@@ -49,7 +41,7 @@ function createLink() {
 }
 
 function getAbout() {
-    alert("Если ты видишь это - я забыл добавить...");
+    $("#about").show();
 }
 
 function makeShorter() {
@@ -78,6 +70,8 @@ function copyLink () {
 function startAnim() {
     let pointer = $("#mouse-pointer");
     let elem = $("#inputPlace");
+    $("#instruction-text-1").removeClass('transpend-text');
+
     var offset = elem.offset();
     var posY = offset.top - $(window).scrollTop() + elem.height() / 2;
     var posX = offset.left - $(window).scrollLeft() + elem.width() / 2;
@@ -94,33 +88,29 @@ function typeQuery(string, index) {
             typeQuery(string, index + 1);
         }, Math.random() * 240);
     } else {
+        $("#instruction-text-2").removeClass('transpend-text');
         moveToButton();
     }
 }
 function moveToButton() {
     let pointer = $("#mouse-pointer");
     let elem = $("#search");
+
     var offset = elem.offset();
     var posY = offset.top - $(window).scrollTop() + elem.height() / 2;
     var posX = offset.left - $(window).scrollLeft() + elem.width() / 2;
     pointer.css({transition: "all 3s cubic-bezier(.65,.05,.36,1) 0s"}); // animation
     pointer.css("padding-left", posX);
     pointer.css("padding-top", posY);
-
+    setTimeout(showComm, 1000);
 }
-
-// function mouseToButton() {
-//     fakeMouse.animate({
-//         top: (button.position().top + 20).px(),
-//         left: (button.position().left + 30).px()
-//     }, 2000, 'swing', function () {
-//         var key = $.getQueryString({id: "l"}) == 1 ? "play.nice" : "play.pwnage";
-//         instruct(key);
-//         button.focus();
-//         setTimeout(redirect, 6000);
-//     });
-// }
-//
+function showComm() {
+    $("#instruction-comment").removeClass('transpend-text');
+    setTimeout(showTip, 1000);
+}
+function showTip() {
+    $("#instruction-tip").removeClass('transpend-text');
+}
 function redirectSearch() {
     var google = "https://www.google.ru/search?&rls=ru&q=";
     window.location = google + EncodeURLlink(urlParams.get('q'));
@@ -136,17 +126,17 @@ function EncodeURLlink(string) {
         : escape(string).replace(/\+/g, "%2B").replace(/%20/g, "+") );
 }
 
-function DecodeURLlink(string) {
-    return decodeURIComponent ? decodeURIComponent(string) : unescape(string);
-}
+// function DecodeURLlink(string) {
+//     return decodeURIComponent ? decodeURIComponent(string) : unescape(string);
+// }
 
-function sleep(milliseconds) {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-        currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-}
+// function sleep(milliseconds) {
+//     const date = Date.now();
+//     let currentDate = null;
+//     do {
+//         currentDate = Date.now();
+//     } while (currentDate - date < milliseconds);
+// }
 
 function copyToClipboard(text) {
     if (window.clipboardData && window.clipboardData.setData) {
@@ -173,4 +163,4 @@ function copyToClipboard(text) {
     }
 }
 
-window.onload = onPageLoaded;
+document.addEventListener("DOMContentLoaded", onPageLoaded);
