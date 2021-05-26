@@ -15,14 +15,15 @@
 <ul id="nav">
     <a href="#inf-people"><li>Влиятельные люди XAQ</li></a>
     <a href="#rules"><li>Правила беседы</li></a>
-    <a href="#aside"><li>Про нас</li></a>
+    <a href="#aside" onclick=""><li>Про нас</li></a>
 </ul>
+
 
 <!-- Основная часть -->
 <main id="os">
-    <audio src="music/music.mp3" preload="metadata" autobuffer="autobuffer" autoplay="autoplay" controls="controls"></audio>
+    <audio id="aplayer" src="music/music.mp3" preload="metadata" autobuffer="autobuffer" controls="controls"></audio>
     <!-- Полезное от участников XAQ -->
-    <div id="main">Полезное от участников XAQ
+    <div id="main" class="trans3e">Полезное от участников XAQ
         <hr>
         <br>
         <ul type="square">
@@ -34,7 +35,7 @@
 
     <!-- Про нас -->
     <a name="aside"></a>
-    <div id="aside" class="main1">Про нас
+    <div id="aside" class="main1 trans3e">Про нас
         <hr>
         <br>
         Мы люди которые сидят в беседе xaq🤡<br>
@@ -50,7 +51,7 @@
     </div>
 
     <!-- Основатели -->
-    <div id="founders" class="main1">Основатели
+    <div id="founders" class="main1 trans3e">Основатели
         <hr>
         <br>
         <ul>
@@ -63,7 +64,7 @@
 
     <!-- Влиятельные люди -->
     <a name="inf-people"></a>
-    <div id="inf-people" class="main1">Влиятельные люди XAQ<hr><br>
+    <div id="inf-people" class="main1 trans3e">Влиятельные люди XAQ<hr><br>
         <ul>
             <li><a title="Аян Алдерсон" target="_blank" href="https://github.com/Ferius057">Аян Алдерсон</a> <u> - Minecraft тема, и тот кто пишет этот сайт. <mark>{Java}</mark></u></li>
             <li><a title="Александр Алексеев" target="_blank" href="https://github.com/AlexCr4ckPentest">Александр Алексеев</a>  <u> - чел который смог. <mark>{C, C++, Assembly}</mark></u></li>
@@ -122,6 +123,9 @@
     <p id="footer-law">© 2021 Все права защищены «XAQ»</p>
     <p id="footer-sup">Поддержка сайта: <a title="Создатель сайта" target="_blank" href="https://vk.com/ferius_057">Аян Алдерсон</a></p>
 </footer>
+
+
+<script src="js/main.js"></script>
 </body>
 </html>
 
