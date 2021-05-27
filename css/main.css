@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Alice&family=Neucha&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Prosto+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap');
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
 
 * {
@@ -17,6 +18,11 @@ body {
     width: 20px;
     height: 20px;
     margin: 10px;
+}
+
+.trans3e{
+    transition-duration: .3s;
+    transition-timing-function: ease;
 }
 
 #i-A {
@@ -193,7 +199,7 @@ body {
 
 #inf-people {
     width: 50%;
-    height: 120px;
+    height: auto;
     margin: 50px 0 0 10%;
     background: #fafafa;
     border: 1px solid #9657dc;
@@ -319,4 +325,83 @@ body {
 #widget a:hover {
     color: red;
     transform: scale(1.3);
+}
+
+
+
+
+/* MODAL WINDOW STYLES */
+#blockscreen, #modalwindow {
+    position: fixed;
+}
+#blockscreen {
+    background: rgba(0, 0, 0, .7);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 227;
+}
+#modalwindow {
+    z-index: 228;
+    background: rgb(59, 59, 59);
+    padding: 10px 10px 10px 10px !important;
+    box-shadow: 0 0 10px rgb(17, 17, 17);
+    color: #fff;
+}
+
+.modalHeader{
+    text-align: center; 
+    font-family: 'Comfortaa', cursive; 
+    font-size: 20px; 
+    font-weight: 700;
+}
+
+.modalContent{
+    text-align: left; 
+    font-family: 'Comfortaa', cursive; 
+    font-size: 15px; 
+    font-weight: 300;
+    height: auto;
+}
+
+.modalButton {
+    text-align: center;
+    margin: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: .8em 1em calc(.8em + 3px) !important;
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+    transition: 0.2s;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.modalButton:hover{
+    background: rgb(53, 167, 110);
+}
+
+.modalButton:active {
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33 147 90) inset;
+}
+
+.MBRed{
+    background: rgb(199, 64, 64);
+    box-shadow: 0 -3px rgb(167, 53, 68) inset;
+}
+.MBRed:hover{
+    background: rgb(167, 53, 53);
+}
+.MBRed:active {
+    background: rgb(147, 33, 42);
+    box-shadow: 0 3px rgb(147, 33, 52) inset;
 }
