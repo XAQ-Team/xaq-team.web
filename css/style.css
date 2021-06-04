@@ -1,6 +1,13 @@
 /*      XAQ-team      */
 
 /* Общее */
+:root {
+    --primary: rgb(118, 43, 173);
+}
+html {
+    overflow-y: scroll !important;
+    overflow-x: hidden;
+}
 html, body {
     background: rgb(50, 50, 50);
     color: rgb(214, 214, 214);
@@ -113,6 +120,23 @@ main {
     border-radius: 5px;
     font-size: 14px;
 }
+.title-area {
+    padding: 5px 5px 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgb(50, 50, 50);
+}
+.title-text h1 {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+.title-description {
+    margin-left: 15px;
+}
+.title-description p {
+    color: rgb(150, 150, 150);
+    font-size: 12px;
+    margin: 0;
+}
 .main-sidebar {
     width: 200px;
 }
@@ -124,16 +148,58 @@ main {
     margin: 20px 0;
     padding: 15px 10px;
 }
+.sidebar-title {
+    margin: 0 0 10px;
+}
+.sidebar-content {
+    margin-left: 10px;
+}
+.sidebar-block.social .button {
+    background: inherit;
+    border-radius: 0;
+}
+.sidebar-block.social .button i {
+    font-size: 20px;
+    padding: 4px;
+    color: var(--primary);
+}
+.sidebar-block.social .button:hover {
+     background: rgb(65, 65, 65);
+ }
 
-/* Подвал */
+/* Подвал (мб и не надо?) */
+footer {
 
-footer
-/* Общее */
+}
 
+/*Адаптация под п.2 */
+@media screen and (max-width: 1000px) {
+    .main-sidebar {
+        display: none;
+    }
+}
 
+/*Адаптация под п.3 */
+@media screen and (max-width: 800px) {
+
+}
+
+/* Комментарии для тебя ) */
 /*
 Настройки ширины для адаптивной верстки:
-    Стандартная ширина:         w > 1280px;
-    Ширина для планшетов и тп:  n > w > 1280px;
-    Мобильные устр-ва:          w < n;
+    1. Стандартная ширина:         w > 1000px;
+    2. Ширина для планшетов и тп:  800 > w > 1000px;
+    3. Мобильные устр-ва:          w < 800;
+*/
+
+/*
+Цвета сайта:
+    Окрасочный цвет: rgb(118, 43, 173)
+    Цвет темы: rgb(n, n, n) : n принадлежит { 50, 55, 60, 65, 70 }
+
+    текст:
+        основной: rgb(245, 245, 245)
+        менее значимый: rgb(150, 150, 150)
+
+    остальные цвета на усмотрение
 */
