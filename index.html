@@ -15,11 +15,14 @@
     <header class="header">
         <div class="header-flexbox">
             <div class="logo">
-                <img id="logo-img" src="images/xaq-logo-filled-white.png" alt="">
+                <a href="/">
+                    <img id="logo-img" src="images/xaq-logo-filled-white.png" alt="">
+                </a>
             </div>
             <nav class="navigation">
                 <ul class="navigation-list">
-                    <li class="navigation-items"><a href="#" class="navigation-link"> Статьи </a></li>
+<!--                    <li class="navigation-items"><a href="#" class="navigation-link"> Форум </a></li>-->
+                    <li class="navigation-items"><a href="#" class="navigation-link"> Статьи </a> </li>
                     <li class="navigation-items"><a href="#" class="navigation-link"> Проекты </a></li>
                     <li class="navigation-items"><a href="#" class="navigation-link"> Зал славы </a></li>
                     <li class="navigation-items"><a href="#" class="navigation-link"> Контакты </a></li>
@@ -28,13 +31,29 @@
         </div>
     </header>
     <!--  Основное меню  -->
+    <div id="header-indentation"> </div>
     <main class="main">
+        <section class="main-content">
+            <button class="button">Стандарт</button>
+            <button class="button primary">Тема</button>
+            <button class="button red">Отменить</button>
+            <button class="button green">Подтвердить</button>
 
+        </section>
+        <aside class="main-sidebar">
+            <div class="sidebar-block">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, sapiente!
+            </div>
+            <div class="sidebar-block">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, quo.
+            </div>
+        </aside>
     </main>
 
     <!--  Подвал  -->                               <!--  - мать сводил на бал  ) -->
     <footer>
 
     </footer>
+    <script> </script> <!-- chrome transition bug, all info here: https://stackoverflow.com/questions/25404206/chrome-transition-fires-on-page-load-when-form-element-added-->
 </body>
 </html>
