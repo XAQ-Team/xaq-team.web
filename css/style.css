@@ -2,8 +2,8 @@
 
 /* Общее */
 :root {
-    --primary: rgb(70, 80, 180);
-    --primary-darker: rgb(55, 65, 165);
+    --primary: rgb(40, 90, 150);
+    --primary-darker: rgb(25, 75, 135);
 }
 
 html {
@@ -20,6 +20,9 @@ html, body {
 a {
     color: inherit;
     text-decoration: none;
+}
+.fas, .fab {
+    color: var(--primary);
 }
 .button {
     cursor: pointer;
@@ -95,6 +98,9 @@ header {
     width: 100px;
     height: 100%;
 }
+.navigation-items:hover {
+    border-bottom: 1px solid var(--primary);
+}
 .navigation-link {
     height: 100%;
     display: block;
@@ -116,13 +122,24 @@ header {
     font-size: 20px;
     padding: 10px;
     margin: 0 5px;
-    color: rgb(150, 150, 150);
     transition: background 0.5s;
 }
 .socials-icons:hover {
     background: rgb(65, 65, 65);
-    color: rgb(200, 200, 200);
+    color: var(--primary-darker);
 }
+#drop-down-menu {
+    display: none;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: right;
+}
+#ddm-icon {
+    cursor: pointer;
+}
+
 /* Основное меню */
 #header-indentation { height: 70px; }
 main {
@@ -141,7 +158,7 @@ main {
 }
 .title-area {
     padding: 5px 5px 15px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border-bottom: 1px solid rgb(50, 50, 50);
 }
 .title-text h1 {
@@ -155,6 +172,9 @@ main {
     color: rgb(150, 150, 150);
     font-size: 12px;
     margin: 0;
+}
+.information-area {
+    padding: 0 10px;
 }
 .main-sidebar {
     width: 200px;
@@ -187,7 +207,25 @@ main {
         display: none;
     }
     .navigation {
-        display: none;
+        position: absolute;
+        display: block;
+        overflow: hidden;
+        top:50px;
+        right: -200px;
+        background: rgb(45, 45, 45);
+        transition: 1s;
+        border-radius: 0 0 0 10px;
+    }
+    .openedNavigation {
+        right: 0;
+
+    }
+    .navigation .navigation-list {
+        display: block;
+        padding: 0 50px;
+    }
+    #drop-down-menu {
+        display: block;
     }
 }
 

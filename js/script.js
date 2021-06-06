@@ -1,6 +1,9 @@
-
+document.addEventListener("DOMContentLoaded", onPageLoaded);
 function onPageLoaded() {
 
 }
 
-document.addEventListener("DOMContentLoaded", onPageLoaded);
+function ddbClick() {
+    let x = $('#navigation');
+    x.toggleClass("openedNavigation", !(x.hasClass('openedNavigation')))
+}
