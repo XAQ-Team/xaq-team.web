@@ -5,7 +5,8 @@
     <meta name="author" content="xaq-team">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>XAQ Team</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">  <!-- Стандартная тема -->
+    <link rel="stylesheet" href="css/main.css"> <!--Специализированное под данную страницу -->
     <link rel="icon" href="images/icon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css">
     <!--    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script> -->
@@ -32,11 +33,12 @@
                 </ul>
             </nav>
             <div class="socials">
-                <a href="#" class="socials-icons fab fa-vk"> </a>
-                <a href="#" class="socials-icons fab fa-telegram"> </a>
-                <a href="#" class="socials-icons fab fa-discord"> </a>
+                <a href="https://vk.com/xaq_it" class="socials-icons fab fa-vk"> </a>
+                <a href="https://t.me/xaq30" class="socials-icons fab fa-telegram"> </a>
+                <a href="https://discord.gg/nRGx8xptqR" class="socials-icons fab fa-discord"> </a>
+                <a href="https://github.com/xaq-team" class="socials-icons fab fa-github"> </a>
             </div>
-            <div id="drop-down-menu"><i id="ddm-icon" class="fas fa-bars" onclick="ddbClick()"></i> </div>
+            <div id="drop-down-menu"><i id="ddm-icon" class="fas fa-bars" onclick="ddmClick()"></i> </div>
         </div>
     </header>
     <!--  Основное меню  -->
@@ -76,7 +78,21 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque blanditiis enim illum ipsum itaque laborum, libero nihil omnis optio perferendis placeat reiciendis similique velit vero.
                 </div>
             </div>
-
+            <div class="sidebar-block music">
+                <h3 class="sidebar-title">
+                    Chill - Music
+                </h3>
+                <div class="sidebar-content">
+                    <div id="audio-player-container">
+                        <audio src="music/music.mp3" preload="metadata" id="audio" loop>
+                            Your browser not supporting audio
+                        </audio>
+                        <!-- swaps with pause icon -->
+                        <div class="button" id="player-button"> <i class="fas fa-play"></i> </div>
+                        <input type="range" id="player-volume-slider" min="0" max="1" step="0.1" value="1" autocomplete="a"/>
+                    </div>
+                </div>
+            </div>
         </aside>
     </main>
     <script> </script> <!-- chrome transition bug, all info here: https://stackoverflow.com/questions/25404206/chrome-transition-fires-on-page-load-when-form-element-added-->

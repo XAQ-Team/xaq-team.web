@@ -40,6 +40,7 @@ a {
     background: rgb(65, 65, 65);
 }
 .button.primary {
+    color: rgb(245, 245, 245);
     background: var(--primary);
 }
 .button.primary:hover {
@@ -53,6 +54,7 @@ a {
     background: rgb(53, 167, 110);
 }
 .button.red {
+    color: rgb(245, 245, 245);
     background: rgb(199, 64, 64);
 }
 .button.red:hover {
@@ -125,7 +127,6 @@ header {
     transition: background 0.5s;
 }
 .socials-icons:hover {
-    background: rgb(65, 65, 65);
     color: var(--primary-darker);
 }
 #drop-down-menu {
@@ -146,6 +147,7 @@ main {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
+    padding: 0 10px;
     display: flex;
 }
 .main-content {
@@ -184,7 +186,7 @@ main {
     width: 100%;
     background: rgb(60, 60, 60);
     border-radius: 6px;
-    margin: 20px 0;
+    margin: 20px 5px;
     padding: 15px 10px;
 }
 .sidebar-title {
@@ -195,7 +197,7 @@ main {
 }
 
 /*Адаптация под п.2 */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1150px) {
     .main-sidebar {
         display: none;
     }
@@ -232,8 +234,8 @@ main {
 /* Комментарии для тебя ) */
 /*
 Настройки ширины для адаптивной верстки:
-    1. Стандартная ширина:         w > 1000px;
-    2. Ширина для планшетов и тп:  750 > w > 1000px;
+    1. Стандартная ширина:         w > 1150px;
+    2. Ширина для планшетов и тп:  750 > w > 1150px;
     3. Мобильные устр-ва:          w < 750;
 */
 
