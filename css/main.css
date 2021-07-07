@@ -31,8 +31,8 @@
     text-align: center;
     width: 50px;
     height: 50px;
-    line-height: 50px;
-    border-radius: 50%;
+    line-height: 270%;
+    border-radius: 100%;
     position: fixed;
     left: 20px;
     top: 50px;
@@ -42,7 +42,7 @@
 #some_block:hover {
     width: 100px;
     height: 100px;
-    line-height: 100px;
+    line-height: 150%;
     border-radius: 100%;
     font-size: 50px;
     cursor: no-drop;
@@ -65,20 +65,19 @@
 
 #nav {
     list-style: none;
-    display: block;
     float: left;
     width: 50%;
     margin-left: 25%;
     text-align: center;
     margin-bottom: 50px;
+    display: flex;
 }
 
 #nav li {
     list-style: none;
-    display: inline;
     background: #fafafa;
     border: 2px solid #9657dc;
-    padding: 0 20px;
+    padding: 0 10px;
     cursor: pointer;
     border-radius: 4px;
 }
@@ -109,13 +108,14 @@
 #os {
     background: url(../images/xaq.jpg) no-repeat center top fixed;
     background-size: 1200px;
-    height: 800px;
+    height: 1600px;
 }
 
 
 
 #main {
     width: 50%;
+    height: auto;
     margin-left: 10%;
     background: #fafafa;
     border: 1px solid #9657dc;
@@ -171,7 +171,7 @@
 
 #founders {
     width: 50%;
-    height: 70px;
+    height: auto;
     margin: 50px 0 0 10%;
     background: #fafafa;
     border: 1px solid #9657dc;
@@ -220,14 +220,15 @@
 
 #aside {
     width: 20%;
-    height: 300px;
+    height: auto;
     margin-right: 55px;
     padding: 20px 2.5%;
     background: #fafafa;
     border: 3px solid #9657dc;
-    margin-left: 5%;
+    margin-left: 70%;
+    margin-top: 90px;
     float: right;
-    position: relative;
+    position: absolute;
 }
 #aside:first-line {
     color: #762bad;
